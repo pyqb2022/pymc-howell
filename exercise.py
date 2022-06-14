@@ -5,7 +5,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.11.2
+#       jupytext_version: 1.13.8
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -14,11 +14,12 @@
 
 # # Analysis of Howell's data with pymc3
 
-import numpy as np              # type: ignore
+# +
+import numpy as np              
 import matplotlib.pyplot as plt # type: ignore
-# %matplotlib inline
 
 import pandas as pd             # type: ignore
+# -
 
 # Partial census data for !Kung San people (Africa), collected by Nancy Howell (~ 1960), csv from R. McElreath, "Statistical Rethinking", 2020.
 
@@ -103,7 +104,11 @@ _ = fig.legend()
 
 # ### Exercise 5
 #
-# Plot the posterior densities by using `pm.plot_posterior`.
+# Plot the posterior densities by using `az.plot_posterior`.
+
+# +
+import arviz as az # type: ignore
+
 
 with norm_height_am:
     pm.plot_posterior(posterior)
