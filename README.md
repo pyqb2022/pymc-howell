@@ -39,11 +39,3 @@ You can execute tests locally on the python file:
 mypy exercise.py
 python -m doctest exercise.py
 ```
-
-Or, if you prefer, you can act on the notebook by using
-[nbQA](https://nbqa.readthedocs.io/en/latest/):
-
-```sh
-nbqa mypy exercise.py
-nbqa doctest exercise.py
-```
