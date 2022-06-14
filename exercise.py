@@ -98,7 +98,7 @@ with norm_height_am:
 
 fig, ax = plt.subplots()
 ax.hist(posterior['mu_h'], bins='auto', density=True, label='Posterior mu_h')
-ax.hist(mu.random(size=10000), bins='auto', density=True, label='Prior mu_h', 
+ax.hist(mu.random(size=1000), bins='auto', density=True, label='Prior mu_h', 
         range=(posterior['mu_h'].min(),posterior['mu_h'].max()))
 _ = fig.legend()
 
@@ -112,13 +112,15 @@ import arviz as az # type: ignore
 
 with norm_height_am:
     pm.plot_posterior(posterior)
+# -
 
 # ### Exercise 6
 #
 # Since `h` is now an observed variable, it is not possible to sample prior values directly from it. You can instead use `pm.sample_prior_predictive`. Compute the sample prior predictive mean of the height.
 
+# +
 with norm_height_am:
-    prior = pm.sample_prior_predictive(10000, var_names=['height'])
+    prior = pm.sample_prior_predictive(1000, var_names=['height'])
 
 prior['height'].mean()
 
@@ -207,6 +209,3 @@ x = np.linspace(d_weight.min(), d_weight.max(), 100)
 fig, ax = plt.subplots()
 ax.scatter(d_weight, adult_males['height'])
 _ = ax.plot(x, post['alpha'].mean() + post['beta'].mean()*x, color='red')
-# -
-
-
