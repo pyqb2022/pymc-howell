@@ -5,14 +5,19 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.13.8
+#       jupytext_version: 1.14.1
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
 
-# # Analysis of Howell's data with pymc3
+# + [markdown] toc=true
+# <h1>Table of Contents<span class="tocSkip"></span></h1>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Analysis-of-Howell's-data-with-pymc" data-toc-modified-id="Analysis-of-Howell's-data-with-pymc-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Analysis of Howell's data with pymc</a></span><ul class="toc-item"><li><span><a href="#A-normal-model-for-the-height" data-toc-modified-id="A-normal-model-for-the-height-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>A normal model for the height</a></span><ul class="toc-item"><li><span><a href="#Exercise-1" data-toc-modified-id="Exercise-1-1.1.1"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Exercise 1</a></span></li><li><span><a href="#Exercise-2" data-toc-modified-id="Exercise-2-1.1.2"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>Exercise 2</a></span></li><li><span><a href="#Exercise-3" data-toc-modified-id="Exercise-3-1.1.3"><span class="toc-item-num">1.1.3&nbsp;&nbsp;</span>Exercise 3</a></span></li><li><span><a href="#Exercise-4" data-toc-modified-id="Exercise-4-1.1.4"><span class="toc-item-num">1.1.4&nbsp;&nbsp;</span>Exercise 4</a></span></li><li><span><a href="#Exercise-5" data-toc-modified-id="Exercise-5-1.1.5"><span class="toc-item-num">1.1.5&nbsp;&nbsp;</span>Exercise 5</a></span></li><li><span><a href="#Exercise-6" data-toc-modified-id="Exercise-6-1.1.6"><span class="toc-item-num">1.1.6&nbsp;&nbsp;</span>Exercise 6</a></span></li><li><span><a href="#Exercise-7" data-toc-modified-id="Exercise-7-1.1.7"><span class="toc-item-num">1.1.7&nbsp;&nbsp;</span>Exercise 7</a></span></li></ul></li><li><span><a href="#A-linear-regression-model" data-toc-modified-id="A-linear-regression-model-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>A linear regression model</a></span><ul class="toc-item"><li><span><a href="#Exercise-8" data-toc-modified-id="Exercise-8-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Exercise 8</a></span></li><li><span><a href="#Exercise-9" data-toc-modified-id="Exercise-9-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Exercise 9</a></span></li><li><span><a href="#Exercise-10" data-toc-modified-id="Exercise-10-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>Exercise 10</a></span></li></ul></li></ul></li></ul></div>
+# -
+
+# # Analysis of Howell's data with pymc
 
 # +
 import numpy as np              
@@ -45,7 +50,7 @@ except:
 #
 #
 
-import pymc3 as pm   # type: ignore
+import pymc as pm   # type: ignore
 
 # +
 norm_height = pm.Model()
